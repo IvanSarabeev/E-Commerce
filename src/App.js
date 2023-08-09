@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Header from './components/staticComponents/Header';
+import Main from './components/Products/Main';
+import Footer from './components/staticComponents/Footer';
 
 function App() {
+  const [categoryName, setCategoryName] = useState("");
+
+  const fetchAllProducts = async () => {
+    try {
+      const response = await fetch("https://dummyjson.com/products/", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      const data = await response.json();
+      return data.products;
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link text-[36px] font-extrabold"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='min-h-screen w-auto'>
+      <Header setCategoryName={setCategoryName} fetchAllProducts={fetchAllProducts} />
+      <Main categoryName={categoryName} setCategoryName={setCategoryName} fetchAllProducts={fetchAllProducts} />
+      <Footer />
     </div>
   );
 }

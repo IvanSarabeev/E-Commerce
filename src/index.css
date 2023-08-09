@@ -16,3 +16,14 @@
     font-family: "Open Sans", sans-serif;
   }
 }
+
+@layer components {
+  .navigation {
+    display: flex;
+    padding-block: 0.5rem;
+    padding-left: 0.75rem;
+    padding-right: 1rem;
+    color: rgb(55 65 81 / 1);
+    border-radius: 0.25rem;
+  }
+}

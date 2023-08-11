@@ -1,5 +1,5 @@
 import React from "react";
-import IconSearch from "../../icons/IconSearch";
+import SearchIcon from "../../icons/SearchIcon";
 
 const SearchInput = (
   {
@@ -36,12 +36,12 @@ const SearchInput = (
       <input
         type="text"
         name="category"
-        placeholder="Search category"
+        placeholder="Search product"
         className="w-full text-white bg-gray-600 py-3 px-4 rounded-lg"
         // onChange={onCategoryChange}
       />
       <button type="button" onClick={handleSearchClick}>
-        <IconSearch />
+        <SearchIcon />
       </button>
     </div>
   );

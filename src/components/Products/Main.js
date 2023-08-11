@@ -5,7 +5,6 @@ import Filter from "../Filtering/Filter";
 const Main = ({ categoryName, setCategoryName, fetchAllProducts }) => {
   const [minPrice, setMinPrice] = useState("");
   const [maxPrice, setMaxPrice] = useState("");
-  const [filteredProducts, setFilteredProducts] = useState([]);
 
   const handleFiltering = async () => {
     try {
@@ -19,7 +18,6 @@ const Main = ({ categoryName, setCategoryName, fetchAllProducts }) => {
 
       const data = await response.json();
       console.log(data);
-      setFilteredProducts(data.products);
     } catch (error) {
       console.error(error);
     }

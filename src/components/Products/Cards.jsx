@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import AddCard from "../Buttons/AddCardBtn";
+import StarRating from "./StarRating";
 
-const Cards = ({ index, items }) => {
+const Cards = ({ index, items, productRating }) => {
+  const [rating, setRating] = useState(productRating);
+
+  const filledStar = Math.round(rating);
+
+  const discountPercentage = items.discountPercentage / 100;
+  const amount = items.price * discountPercentage;
+  const totalAmount = (items.price - amount).toFixed(2);
+
   return (
     <>
       <div
@@ -9,7 +18,7 @@ const Cards = ({ index, items }) => {
         className="relative h-[300px] w-[250px] md:h-[500px] md:w-[350px] shadow-xl  rounded-xl lg:rounded-3xl"
       >
         <img
-          src={items.images[0]}
+          src={items.thumbnail}
           alt={items.title}
           className="w-full h-[150px] md:w-[350px] md:h-[350px] mt-1 rounded-t-xl object-fill"
         />
@@ -21,20 +30,18 @@ const Cards = ({ index, items }) => {
             <h5 className=" truncate font-semibold font-serif text-[16px] md:text-[18px]">
               {items.title}
             </h5>
-            <p className="block w-fit bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded ml-3">
-              {items.rating}
-            </p>
+            <StarRating filledStar={filledStar} />
           </span>
           <p className="my-3 truncate block font-normal text-[14px] md:text-[16px]">
             {items.description}
           </p>
           <div className="flex items-center justify-between">
-            <span className="flex justify-center gap-x-1 items-center">
+            <span className="flex justify-center gap-x-1 items-stretch">
               <p className="text-xl md:text-3xl font-bold text-gray-900">
-                ${items.price}
+                ${totalAmount}
               </p>
-              <sub className="text-[12px] text-red-700 font-normal">
-                {items.discountPercentage}%
+              <sub className="text-[12px] text-red-700 font-normal mt-2">
+                %{items.discountPercentage}
               </sub>
             </span>
             <AddCard />

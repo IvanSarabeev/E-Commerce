@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import Header from './components/staticComponents/Header';
 import Main from './components/Products/Main';
 import Footer from './components/staticComponents/Footer';
@@ -6,7 +6,7 @@ import Footer from './components/staticComponents/Footer';
 function App() {
   const [categoryName, setCategoryName] = useState("");
 
-  const fetchAllProducts = async () => {
+  const fetchAllProducts = useCallback(async () => {
     try {
       const response = await fetch("https://dummyjson.com/products/", {
         method: "GET",
@@ -15,12 +15,17 @@ function App() {
         },
       });
 
+      if (!response.ok) {
+        throw new Error(response.statusText);
+      }
+
       const data = await response.json();
       return data.products;
+
     } catch (error) {
       console.error(error);
     }
-  };
+  }, []);
 
   return (
     <div className='min-h-screen w-auto'>

@@ -46,10 +46,7 @@ const Header = ({ setCategoryName, fetchAllProducts }) => {
     );
 
     if (!response.ok) {
-      console.error(
-        "Error fetching products by category:",
-        response.statusText
-      );
+      console.error("Error fetching category:", response.statusText);
       return;
     }
 

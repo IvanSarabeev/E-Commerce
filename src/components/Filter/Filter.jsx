@@ -8,8 +8,8 @@ const Filter = ({ applyFilters }) => {
   const [ratingFilter, setRatingFilter] = useState(false);
 
   return (
-    <div className="w-[180px] sm:w-[200px] md:w-[235px] py-16 flex flex-col items-center bg-[#f8fafc] border-r border-gray-300 relative min-h-screen z-0">
-      <div className="flex flex-col">
+    <div className="w-[180px] hidden  h-full fixed z-10 sm:w-[200px] md:w-[215px] xl:flex flex-col items-center bg-[#f8fafc] border-r border-gray-300">
+      <div className="flex flex-col pt-10">
         <FilterRating
           ratingFilter={ratingFilter}
           setRatingFilter={setRatingFilter}

@@ -15,12 +15,12 @@ const Cards = ({ index, items, productRating }) => {
     <>
       <div
         key={index}
-        className="relative z-0 h-[300px] w-[250px] sm:h-[400px] md:h-[450px] md:w-[300px] lg:h-[495px] shadow-xl rounded-xl lg:rounded-3xl"
+        className="relative z-0 h-[300px] w-[250px] sm:h-[400px] sm:w-[325px] md:h-[450px] md:w-[300px] lg:h-[495px] shadow-xl rounded-xl lg:rounded-3xl"
       >
         <img
           src={items.thumbnail}
           alt={items.title}
-          className="w-full h-[150px] sm:w-[250px] sm:h-[250px] md:w-[300px] md:h-[300px] lg:w-[350px] lg:h-[350px] mt-1 rounded-t-xl object-fill"
+          className="w-full h-[150px] sm:w-[325px] sm:h-[250px] md:w-[300px] md:h-[300px] lg:w-[350px] lg:h-[350px] mt-1 rounded-t-xl object-fill"
         />
         <p className="absolute top-[0.5%] rounded-bl-lg -left-1 p-2 rounded-tl-lg rounded-sm rounded-br-md rounded-tr-none z-10 capitalize text-[14px] font-semibold font-sans text-white bg-orange-400">
           {items.category}

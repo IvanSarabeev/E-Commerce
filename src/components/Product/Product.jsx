@@ -94,7 +94,7 @@ const Product = ({
   };
 
   return (
-    <section className="w-full grid items-center justify-center mx-auto pt-16 md:pt-8 pb-2 bg-[#edf2f7]">
+    <section className="xl:pl-[220px] w-full grid items-center justify-center mx-auto pt-16 md:pt-8 pb-2 bg-[#edf2f7]">
       <span className="flex flex-wrap gap-y-4 md:flex-row mb-6 items-center justify-center text-center gap-x-6 text-gray-800">
         <p className="font-semibold font-serif text-[18px]">
           Visible: {currentlyDisplayed.length} from {filteredProducts.length}

@@ -12,7 +12,7 @@ const AddCard = () => {
         <IconCheck />
         <div>
           <h3 className="font-bold">Added to cart</h3>
-          <p className="text-sm">Successfully added!</p>
+          <p className="text-sm">Product added to cart</p>
         </div>
       </div>,
       1000
@@ -21,15 +21,17 @@ const AddCard = () => {
   };
 
   return (
-    <button onClick={handleAdded}>
-      <a
-        href="https://"
-        className="text-white flex items-center space-x-4 gap-2 bg-blue-700 hover:bg-blue-800 focus:ring-2 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
-      >
-        <CartIcon />
-        Add to cart
-      </a>
-    </button>
+    <>
+      <button onClick={handleAdded}>
+        <a
+          href="https://"
+          className="text-white flex items-center space-x-4 gap-2 bg-blue-700 hover:bg-blue-800 focus:ring-2 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+        >
+          <CartIcon />
+          Cart
+        </a>
+      </button>
+    </>
   );
 };
 

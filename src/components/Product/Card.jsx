@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import AddCard from "../Buttons/AddCardBtn";
+import AddCard from "../Button/AddCardButton";
 import StarRating from "./StarRating";
 
 const Cards = ({ index, items, productRating }) => {
@@ -15,12 +15,12 @@ const Cards = ({ index, items, productRating }) => {
     <>
       <div
         key={index}
-        className="relative h-[300px] w-[250px] md:h-[500px] md:w-[350px] shadow-xl  rounded-xl lg:rounded-3xl"
+        className="relative z-0 h-[300px] w-[250px] sm:h-[400px] md:h-[450px] md:w-[300px] lg:h-[495px] shadow-xl rounded-xl lg:rounded-3xl"
       >
         <img
           src={items.thumbnail}
           alt={items.title}
-          className="w-full h-[150px] md:w-[350px] md:h-[350px] mt-1 rounded-t-xl object-fill"
+          className="w-full h-[150px] sm:w-[250px] sm:h-[250px] md:w-[300px] md:h-[300px] lg:w-[350px] lg:h-[350px] mt-1 rounded-t-xl object-fill"
         />
         <p className="absolute top-[0.5%] rounded-bl-lg -left-1 p-2 rounded-tl-lg rounded-sm rounded-br-md rounded-tr-none z-10 capitalize text-[14px] font-semibold font-sans text-white bg-orange-400">
           {items.category}
@@ -32,7 +32,7 @@ const Cards = ({ index, items, productRating }) => {
             </h5>
             <StarRating filledStar={filledStar} />
           </span>
-          <p className="my-3 truncate block font-normal text-[14px] md:text-[16px]">
+          <p className="my-3 truncate block font-normal text-[14px] md:text-[16px] antialiased">
             {items.description}
           </p>
           <div className="flex items-center justify-between">
@@ -40,7 +40,7 @@ const Cards = ({ index, items, productRating }) => {
               <p className="text-xl md:text-3xl font-bold text-gray-900">
                 ${totalAmount}
               </p>
-              <sub className="text-[12px] text-red-700 font-normal mt-2">
+              <sub className="text-[10px] text-red-700 font-normal mt-2">
                 %{items.discountPercentage}
               </sub>
             </span>

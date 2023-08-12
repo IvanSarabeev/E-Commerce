@@ -7,7 +7,6 @@ const StarRating = ({ filledStar }) => {
         {[...Array(5)].map((item, index) => (
           <svg
             key={index}
-            xmlns="http://www.w3.org/2000/svg"
             fill={`${index < filledStar ? "yellow" : "none"}`}
             viewBox="0 0 24 24"
             strokeWidth={1.5}

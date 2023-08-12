@@ -3,12 +3,11 @@ import React from "react";
 const IconSearch = () => {
   return (
     <svg
-      xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className="w-6 h-6 hover:cursor-pointer ml-2 hover:bg-blue-400 rounded-full hover:p-1"
+      className="w-6 h-6 hover:cursor-pointer"
     >
       <path
         strokeLinecap="round"
